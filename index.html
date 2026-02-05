@@ -7,12 +7,13 @@
       margin:0;height:100vh;overflow:hidden;
       display:flex;justify-content:center;align-items:center;
       background:radial-gradient(circle,#ff4d6d,#590d22);
-      color:white;font-family:Arial;
+      color:#fff;font-family:Arial;
     }
     .box{text-align:center;z-index:2}
     button{
       padding:12px 25px;font-size:18px;border:none;
       border-radius:30px;background:#ffccd5;cursor:pointer;
+      margin-top:15px;
     }
     .heart{
       position:absolute;font-size:20px;animation:float 6s infinite;
@@ -22,6 +23,7 @@
       50%{opacity:1}
       100%{transform:translateY(-10vh);opacity:0}
     }
+    iframe{display:none}
   </style>
 </head>
 <body>
@@ -29,15 +31,24 @@
 <div class="box">
   <h1>Roushini ❤️</h1>
   <p>Mujhe tumse ek sawal puchna hai…</p>
-  <button onclick="ask()">Click Here 💖</button>
+  <button onclick="play()">Click Here 💖</button>
 </div>
 
+<!-- Hindi Romantic Song (YouTube) -->
+<iframe id="yt"
+  src="https://www.youtube.com/embed/450p7goxZqg?enablejsapi=1"
+  allow="autoplay"></iframe>
+
 <script>
-function ask(){
+function play(){
+  // play YouTube
+  document.getElementById('yt').src += "&autoplay=1";
   let ans = confirm("Roushini 💕\nKya tum meri Valentine banogi? 💖");
   if(ans) alert("Yayyy! Tumne mera din bana diya ❤️🥰");
   else alert("Koi baat nahi… dil se poocha tha ❤️");
 }
+
+// floating hearts
 for(let i=0;i<25;i++){
   let h=document.createElement("div");
   h.innerHTML="❤️";h.className="heart";
@@ -49,3 +60,4 @@ for(let i=0;i<25;i++){
 
 </body>
 </html>
+
