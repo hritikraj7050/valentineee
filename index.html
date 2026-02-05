@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Roushini ❤️</title>
+  <style>
+    body{
+      margin:0;height:100vh;overflow:hidden;
+      display:flex;justify-content:center;align-items:center;
+      background:radial-gradient(circle,#ff4d6d,#590d22);
+      color:white;font-family:Arial;
+    }
+    .box{text-align:center;z-index:2}
+    button{
+      padding:12px 25px;font-size:18px;border:none;
+      border-radius:30px;background:#ffccd5;cursor:pointer;
+    }
+    .heart{
+      position:absolute;font-size:20px;animation:float 6s infinite;
+    }
+    @keyframes float{
+      0%{transform:translateY(100vh);opacity:0}
+      50%{opacity:1}
+      100%{transform:translateY(-10vh);opacity:0}
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>Roushini ❤️</h1>
+  <p>Mujhe tumse ek sawal puchna hai…</p>
+  <button onclick="ask()">Click Here 💖</button>
+</div>
+
+<script>
+function ask(){
+  let ans = confirm("Roushini 💕\nKya tum meri Valentine banogi? 💖");
+  if(ans) alert("Yayyy! Tumne mera din bana diya ❤️🥰");
+  else alert("Koi baat nahi… dil se poocha tha ❤️");
+}
+for(let i=0;i<25;i++){
+  let h=document.createElement("div");
+  h.innerHTML="❤️";h.className="heart";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
